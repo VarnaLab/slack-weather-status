@@ -12,7 +12,7 @@ defmodule Weather.Application do
       # {Weather.Worker, arg},
     ]
 
-    :timer.apply_interval(1000 * 60, Weather, :update_icon, [])
+    :timer.apply_interval(1000 * 60 * 5, Weather, :update_icon, [])
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
