@@ -20,7 +20,8 @@ use Mix.Config
 #
 #     config :logger, level: :info
 #
-
+config :slack_icon, SLACK_ACCESS_TOKEN: "your api token here"
+config :slack_icon, DARK_SKY_ACCESS_TOKEN: "your api token here"
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
 # by uncommenting the line below and defining dev.exs, test.exs and such.
