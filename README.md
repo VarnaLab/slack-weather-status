@@ -20,3 +20,4 @@
 - [valentin](https://github.com/VarnaLab/slack-weather-status/tree/valentin)
 - [vyacheslav](https://github.com/VarnaLab/slack-weather-status/tree/vyacheslav)
 - [zecho](https://github.com/VarnaLab/slack-weather-status/tree/zecho)
+- [simo](https://github.com/VarnaLab/slack-weather-status/tree/simo)
