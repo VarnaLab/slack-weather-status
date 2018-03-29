@@ -1,22 +1,31 @@
 
-# Elixir Project 1: Update user's status icon in Slack based on the current weather forecast for Varna
+# slack-weather-status
 
-1. Authenticate with Slack using [this link](https://grant.outofindex.com/slack), choose `users.profile:write` scope, and save the returned `access token`
-2. Create a script that makes GET request to `https://api.darksky.net/forecast/[key]/[latitude],[longitude]` where:
-  - `key` is API key from https://darksky.net/dev
-  - `lat,long` for Varna is `43.2095914,27.9133562`
-3. Map the returned weather icon to emoji shortcode like:
+## install
 
-  ```
-  crescent_moon sunny mostly_sunny partly_sunny barely_sunny partly_sunny_rain
-  cloud rain_cloud thunder_cloud_and_rain lightning snow_cloud fog
-  ```
-4. Make POST request to https://api.slack.com/methods/users.profile.set using the `access token` and the emoji `:shortcode:`
-5. Push the code to https://github.com/VarnaLab/slack-weather-status in separate branch with your name
-6. Run the script with Crontab on every 5 minutes
+```bash
+mix deps.get
+```
 
-# Solutions
+## run
 
-- [valentin](https://github.com/VarnaLab/slack-weather-status/tree/valentin)
-- [vyacheslav](https://github.com/VarnaLab/slack-weather-status/tree/vyacheslav)
-- [zecho](https://github.com/VarnaLab/slack-weather-status/tree/zecho)
+```bash
+mix run slacker.exs config.json
+```
+
+## config.json
+
+```json
+{
+  "apikey": "[darksky API key]",
+  "location": "43.2095914,27.9133562",
+  "token": "[slack access token]"
+}
+```
+
+## crontab
+
+```bash
+# every 15 min
+*/15 * * * * mix run slacker.exs config.json
+```
